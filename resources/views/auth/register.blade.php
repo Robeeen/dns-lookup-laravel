@@ -12,7 +12,7 @@
          <!-- Gender -->
          <div class="mt-4">
             <x-input-label for="gender" :value="__('Gender')" />
-            <x-input-select :options="$request" class="block mt-1 w-full"/>
+            <x-input-select name="gender" class="block mt-1 w-full"/>
             <x-input-error :messages="$errors->get('gender')" class="mt-2" />
         </div>
 

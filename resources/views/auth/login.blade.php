@@ -12,12 +12,7 @@
             <x-input-error :messages="$errors->get('email')" class="mt-2" />
         </div>
 
-        <!--Gender Number -->
-        <div>
-            <x-input-label for="gender" :value="__('Gender')" class="mt-2" />
-            <x-select id="gender" class="block mt-1 w-full" type="gender" name="gender" :options="['male', 'female', 'others']" />
-            <x-select-error :messages="$errors->get('gender')" class="mt-5" />
-        </div>
+       
 
         <!-- Password -->
         <div class="mt-4">
