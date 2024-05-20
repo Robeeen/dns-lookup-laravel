@@ -29,4 +29,26 @@ php artisan make:migration add_gender_field_to_users_table --table=users
             'gender' => $request->gender,
         ]);
 
-8. 
+8. Then go to resources->views->Auth->register.blade.php and add following code:
+   <!-- Gender -->
+         <div class="mt-4">
+            <x-input-label for="gender" :value="__('Gender')" />
+            <x-input-select name="gender" class="block mt-1 w-full"/>
+            <x-input-error :messages="$errors->get('gender')" class="mt-2" />
+        </div>
+[Add this code below the name x-input>
+
+9. Now create a input-select.blade.php under views->components folder and paste this code:
+    <select {!! $attributes->merge(['class' => 'border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm']) !!}>       
+        <option>male</option>
+        <option>female</option>
+        <option>others</option>    
+    </select>
+
+10. Now refresh the apps, and click on register, it should display the dropdown menu (select options) and should save the value while registering.
+11. Check for the attachements for screenshots.
+
+    Thanks you
+    Shams khan.
+    20.05.2024
+    
