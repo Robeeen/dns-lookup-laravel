@@ -11,5 +11,22 @@ php artisan make:migration add_gender_field_to_users_table --table=users
         });
 4. To reverse the migration, we should use this:
 
-5. Then run php artisan migration from cli, then check the database table if the gender field has been created with type-> male/female/others.
-6. 
+5. Then run php artisan migration from cli, then check the database table if the gender row has been created with type-> male/female/others.
+6. Then go to User model and add the gender here:
+     protected $fillable = [
+        'name',
+        'email',
+        'password',
+        'gender',
+    ];
+
+7. Then go to Auth->Controller->RegisteredUserController.php and add following under the existing array values:
+     $request->validate([
+           'gender' => ['required', 'string', 'max:255'],
+        ]);
+
+        $user = User::create([
+            'gender' => $request->gender,
+        ]);
+
+8. 
