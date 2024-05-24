@@ -1,20 +1,19 @@
+
 <div>
-    
 
-    <?php
-   
-        $host = "google.com";
-         $result = dns_get_record("$host", DNS_A);
+    <form wire:submit="createNewuser" action="">
+        <input wire:model="name" type="text" placeholder="name" />
+        <input wire:model="email" type="email" placeholder="email" />
+        <input wire:model="password" type="password" placeholder="Password" />
 
-       print_r($result);
+        <button>Create</button>
+    </form>
 
-   
-    ?>
+    <hr>
 
-    <form>
-        <input type="text" required placeholder="type the url address"> <br>
-        <button>Send</button>
+@foreach($users as $user)
+<p>{{$user->name}}</p>
 
-</form>
+@endforeach
     
 </div>
