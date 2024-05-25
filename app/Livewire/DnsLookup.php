@@ -12,6 +12,7 @@ class DnsLookup extends Component
     public $email;
     public $gender;
     public $password;
+ 
 
     public function createNewuser(){
         User::create([

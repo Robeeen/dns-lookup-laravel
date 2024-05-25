@@ -12,10 +12,11 @@
             </div>
             <div class="mb-5">
                 <label for="gender" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your gender</label>
-                <select live:model="gender" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                @foreach ($users as $data)
-                    <option value="{{ $data->gender }}">{{ $data->gender }}</option>
-                @endforeach
+                <select wire:model="gender" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+               
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="others">Others</option>                
                 </select>
             <div>
                 @json($gender)
@@ -29,23 +30,25 @@
 
     <hr>
 
-    <table class="table-fixed" >
+    <table class="table-fixed">
     <thead>
         <tr>
             <th class="w-1/2 px-4 py-2">Name</th>
             <th class="w-1/2 px-4 py-2">Email</th>
             <th class="w-1/2 px-4 py-2">Gender</th>
-</tr>
-<tbody>
-@foreach($users as $user)
+        </tr>
+    </thead>
+    <tbody>
+            @foreach($users as $user)
 
-    <tr >
-        <td class="border px-4 py-2">{{$user->name}}</td>
-        <td class="border px-4 py-2">{{$user->email}}</td>
-        <td class="border px-4 py-2">{{$user->gender}}</td>
-    </tr>
-</tbody>
-</table>
-@endforeach
+            <tr >
+                <td class="border px-4 py-2">{{$user->name}}</td>
+                <td class="border px-4 py-2">{{$user->email}}</td>
+                <td class="border px-4 py-2">{{$user->gender}}</td>
+            </tr>
+            @endforeach
+    </tbody>
+    </table>
+            
     
 </div>
