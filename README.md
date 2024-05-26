@@ -6,7 +6,7 @@ Add a new dropdown field in Registration form
 php artisan make:migration add_gender_field_to_users_table --table=users
 2. Check the add_gender_field_to_users_table.php under database/migration/ folder.
 3. To run the migration, we need to write following code:
-   
+``` 
     /**
      * Run the migrations.
      */
@@ -16,8 +16,16 @@ php artisan make:migration add_gender_field_to_users_table --table=users
             $table->enum('gender', ['male', 'female', 'others'])->nullable()->after('name');
         });
     }
-   
+```  
 5. To reverse the migration, we should use this:
+```
+public function down(): void
+    {
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropColumn('gender');
+        });
+    };
+```
 
 6. Then run php artisan migration from cli, then check the database table if the gender row has been created with type-> male/female/others.
 7. Then go to User model and add the gender here:

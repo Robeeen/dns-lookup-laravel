@@ -12,6 +12,7 @@ class DnsLookup extends Component
     public $email;
     public $gender;
     public $password;
+    public $usertype;
  
 
     public function createNewuser(){
@@ -19,7 +20,8 @@ class DnsLookup extends Component
             'name' => $this->name,
             'email' => $this->email,
             'gender' => $this->gender,
-            'password' => $this->password
+            'password' => $this->password,
+            'usertype' => $this->usertype
         ]);
     }
     public function render()
