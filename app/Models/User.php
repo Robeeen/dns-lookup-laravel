@@ -21,6 +21,7 @@ class User extends Authenticatable
         'email',
         'password',
         'gender',
+        'usertype',
     ];
 
     /**
@@ -44,5 +45,21 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    /**
+     * Check user role
+     */
+    public function isAdmin()
+    {
+        return $this->usertype === 'admin';
+    }
+    public function isSubscriber()
+    {
+        return $this->usertype === 'subscriber';
+    }
+    public function isEditor()
+    {
+        return $this->usertype === 'editor';
     }
 }

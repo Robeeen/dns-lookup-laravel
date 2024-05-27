@@ -28,7 +28,17 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        return redirect()->intended(route('dashboard', absolute: false));
+        //return redirect()->intended(route('dashboard', absolute: false)); //Original code with laravel.
+
+        //Start - Added 26.05.2023 - shams        
+        if(Auth::user()->isAdmin()){
+            return redirect()->intended(route('dashboard'));
+        }elseif(Auth::user()->isSubscriber()){
+            return redirect()->intended(route('subscriber'));
+        }else{
+            return redirect()->intended(route('/editor/dashboard'));
+        }
+        //Ends - Added 26.05.2023 - shams   
     }
 
     /**
