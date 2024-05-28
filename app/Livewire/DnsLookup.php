@@ -24,6 +24,13 @@ class DnsLookup extends Component
             'usertype' => $this->usertype
         ]);
     }
+    public function deleteUser($id){
+        $data = User::find($id);
+        if($data){
+            $data->delete();
+        }
+
+    }
     public function render()
     {
         $users = User::all();
