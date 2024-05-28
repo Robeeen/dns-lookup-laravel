@@ -1,6 +1,5 @@
-<div>
-<div class="flex flex-row w-screen">
-        <div class="basis-6/12">
+<div class="flex">
+        <div style="padding-right: 15px; width: 30%">
             <form wire:submit.prevent="createNewuser">       
                     <div class="mb-5">
                         <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your name</label>
@@ -36,32 +35,30 @@
                 <button type="submit" style="padding: 5px; border: 1px solid; font-weight:bold;margin-top: 10px; margin-bottom: 15px; background: blue; color: white; width:100%">Create</button>
             </form><!-- end of form -->
         </div>
-</div>
 
-<div class="flex flex-row w-screen">
-    <div class="basis-6/12">
-            <table class="table-fixed mb-5">
-                <thead>
-                    <tr>
-                        <th class="w-1/2 px-4 py-2">Name</th>
-                        <th class="w-1/2 px-4 py-2">Email</th>
-                        <th class="w-1/2 px-4 py-2">Gender</th>
-                        <th class="w-1/2 px-4 py-2">Role</th>
-                    </tr>
-                </thead>
-                <tbody>
-                        @foreach($users as $user)
-                        <tr >
-                            <td wire:key="{{$user->id}}" class="border px-4 py-2">{{$user->name}}</td>
-                            <td wire:key="{{$user->id}}" class="border px-4 py-2">{{$user->email}}</td>
-                            <td wire:key="{{$user->id}}" class="border px-4 py-2">{{$user->gender}}</td>
-                            <td wire:key="{{$user->id}}" class="border px-4 py-2">{{$user->usertype}}</td>
-                        </tr>
-                        @endforeach
-                </tbody>
-            </table>
-    </div>
-</div>
+
+        <div style="width: 70%;">
+                    <table style="width: 100%">
+                        <thead>
+                            <tr style="background: #c2c2c2">
+                                <th class="w-1/2 px-4 py-2">Name</th>
+                                <th class="w-1/2 px-4 py-2">Email</th>
+                                <th class="w-1/2 px-4 py-2">Gender</th>
+                                <th class="w-1/2 px-4 py-2">Role</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                @foreach($users as $user)
+                                <tr >
+                                    <td wire:key="{{$user->id}}" class="border px-4 py-2">{{$user->name}}</td>
+                                    <td wire:key="{{$user->id}}" class="border px-4 py-2">{{$user->email}}</td>
+                                    <td wire:key="{{$user->id}}" class="border px-4 py-2">{{$user->gender}}</td>
+                                    <td wire:key="{{$user->id}}" class="border px-4 py-2">{{$user->usertype}}</td>
+                                </tr>
+                                @endforeach
+                        </tbody>
+                    </table>
+        </div>
 </div>
 
 
