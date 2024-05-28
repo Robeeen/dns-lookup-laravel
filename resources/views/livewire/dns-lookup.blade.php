@@ -40,28 +40,26 @@
 </div>
 <div class="flex flex-row w-screen">
 <div class="basis-6/12">
-    <form></form>
-
-<table class="table-fixed mb-5">
-    <thead>
-        <tr>
-            <th class="w-1/2 px-4 py-2">Name</th>
-            <th class="w-1/2 px-4 py-2">Email</th>
-            <th class="w-1/2 px-4 py-2">Gender</th>
-            <th class="w-1/2 px-4 py-2">Role</th>
-        </tr>
-    </thead>
-    <tbody>
-            @foreach($users as $user)
-            <tr >
-                <td wire:key="{{$user->id}}" class="border px-4 py-2">{{$user->name}}</td>
-                <td wire:key="{{$user->id}}" class="border px-4 py-2">{{$user->email}}</td>
-                <td wire:key="{{$user->id}}" class="border px-4 py-2">{{$user->gender}}</td>
-                <td wire:key="{{$user->id}}" class="border px-4 py-2">{{$user->usertype}}</td>
+    <table class="table-fixed mb-5">
+        <thead>
+            <tr>
+                <th class="w-1/2 px-4 py-2">Name</th>
+                <th class="w-1/2 px-4 py-2">Email</th>
+                <th class="w-1/2 px-4 py-2">Gender</th>
+                <th class="w-1/2 px-4 py-2">Role</th>
             </tr>
-            @endforeach
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+                @foreach($users as $user)
+                <tr >
+                    <td wire:key="{{$user->id}}" class="border px-4 py-2">{{$user->name}}</td>
+                    <td wire:key="{{$user->id}}" class="border px-4 py-2">{{$user->email}}</td>
+                    <td wire:key="{{$user->id}}" class="border px-4 py-2">{{$user->gender}}</td>
+                    <td wire:key="{{$user->id}}" class="border px-4 py-2">{{$user->usertype}}</td>
+                </tr>
+                @endforeach
+        </tbody>
+    </table>
         
 
 </div>
