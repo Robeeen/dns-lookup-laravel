@@ -56,7 +56,7 @@
                                     <td wire:key="{{$user->id}}" class="border px-4 py-2">{{$user->email}}</td>
                                     <td wire:key="{{$user->id}}" class="border px-4 py-2">{{$user->gender}}</td>
                                     <td wire:key="{{$user->id}}" class="border px-4 py-2">{{$user->usertype}}</td>
-                                    <td><a href="" wire:click="deleteUser({{$user->id}})">Delete</a></td>
+                                    <td><button wire:click="deleteUser({{$user->id}})" wire:confirm="Are you sure you want to delete?" style="background: red; color: white; padding: 5px; width: 100%">Delete</button></td>
                                 </tr>
                                 @endforeach
                         </tbody>

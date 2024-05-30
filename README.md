@@ -1,4 +1,4 @@
-First: How to add a new field in Registration form
+How to create an additional field in laravel 11 Registration form:
 
 Add a new dropdown field in Registration form 
 
@@ -71,4 +71,12 @@ public function down(): void
     Thanks you
     Shams khan.
     20.05.2024
+
+///////////////////////////////////////////////
+
+How to display users table from Database on Admin Dashboard page using Livewire.
+
+
+
+How to build multiple user type (admin or user) with
     
